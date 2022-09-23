@@ -1,3 +1,7 @@
 [submodule "balance-crud"]
 	path = balance-crud
 	url = https://github.com/fpeluso/balance-crud.git
+
+[submodule "balance-fe"]
+	path = balance-fe
+	url = https://github.com/fpeluso/balance-fe.git
