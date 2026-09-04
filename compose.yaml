@@ -1,0 +1,17 @@
+services:
+  api:
+    build:
+      context: .
+    container_name: personal-finance-api
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT:-3000}:3000"
+    environment:
+      DATA_FILE: /app/data/finance.json
+      PORT: 3000
+    volumes:
+      - finance-data:/app/data
+
+volumes:
+  finance-data:
+    name: personal-finance-data
