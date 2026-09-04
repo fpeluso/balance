@@ -1,6 +1,6 @@
 # Personal Finance API
 
-A dependency-free Node.js REST backend for tracking current accounts and credit cards. Monetary values are accepted and returned as decimal strings (for example, `"12.50"`) so balances are never calculated using floating point values.
+A dependency-free Node.js REST backend for tracking current accounts and credit cards. Data is persisted in a SQLite database, while monetary values are accepted and returned as decimal strings (for example, `"12.50"`) so balances are never calculated using floating point values.
 
 ## Run with Docker (recommended)
 
@@ -68,4 +68,4 @@ Allowed types are `checking`, `savings`, and `credit_card`. The endpoint returns
 
 ## Persistence
 
-Data is stored locally in `data/finance.json` and written through a temporary file followed by an atomic rename. Do not commit this file.
+Data is stored locally in the SQLite database `data/finance.db`. SQLite keeps the application self-contained—no separate database server is required—and each transaction creation or deletion updates both the transaction ledger and the linked account balance inside one database transaction. Do not commit the database files.

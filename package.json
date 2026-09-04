@@ -4,5 +4,5 @@
   "private": true,
   "description": "REST API for personal accounts, credit cards, and transactions.",
   "scripts": { "start": "node src/server.js", "test": "node --test" },
-  "engines": { "node": ">=20" }
+  "engines": { "node": ">=22.5" }
 }
